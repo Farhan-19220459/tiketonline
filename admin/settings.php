@@ -42,7 +42,7 @@ adminLogin();
 
                 <div class="modal fade" id="general-s" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
-                        <form id="general_s_form">
+                        <form id="general_s_form" method="post" action="">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title">Settings</h5>
@@ -58,8 +58,8 @@ adminLogin();
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" onclick="title.value = general_data.title, about.value = general_data.about" class="btn text-secondary shadown-none" data-bs-dismiss="modal">Cancel</button>
-                                    <button type="button" class="btn custom-bg text-white shadow-none">Submit</button>
+                                    <button type="button" class="btn text-secondary shadown-none" data-bs-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn custom-bg text-white shadow-none">Submit</button>
                                 </div>
                             </div>
                         </form>
@@ -155,7 +155,7 @@ adminLogin();
 
             <div class="modal fade" id="contacts-s" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog">
-                    <form id="contacts_s_form">
+                    <form id="contacts_s_form" method="post" action="">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title">Settings</h5>
@@ -214,8 +214,8 @@ adminLogin();
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" onclick="contacts_inp(contacts_data)" class="btn text-secondary shadown-none" data-bs-dismiss="modal">Cancel</button>
-                                    <button type="button" class="btn custom-bg text-white shadow-none">Submit</button>
+                                    <button type="button" class="btn text-secondary shadown-none" data-bs-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn custom-bg text-white shadow-none">Submit</button>
                                 </div>
                             </div>
                     </form>
