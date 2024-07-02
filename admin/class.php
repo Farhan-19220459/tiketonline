@@ -1,7 +1,7 @@
-<?php  
-    require('views/essentials.php');
-    require('views/db_config.php');
-    adminLogin();
+<?php
+require('views/essentials.php');
+require('views/db_config.php');
+adminLogin();
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +14,7 @@
     <title>Admin Panel - Class</title>
     <?php require('views/links.php'); ?>
 </head>
+
 <body class="bg-light">
 
     <?php require('views/header.php'); ?>
@@ -26,8 +27,7 @@
                     <div class="card-body">
 
                         <div class="text-end mb-4">
-                            <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal"
-                                data-bs-target="#add_class">
+                            <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal" data-bs-target="#add_class">
                                 <i class="bi bi-plus-square"></i> Add
                             </button>
                         </div>
@@ -57,8 +57,7 @@
 
     <!-- Add class modal-->
 
-    <div class="modal fade" id="add_class" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="add_class" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <form id="add_class_form" autocomplete="off">
                 <div class="modal-content">
@@ -94,10 +93,10 @@
                             <div class="col-12 mb-3">
                                 <label class="form-label fw-bold">Features</label>
                                 <div class="row">
-                                    <?php 
+                                    <?php
                                     $res = selectAll('features');
-                                    while($opt = mysqli_fetch_assoc($res)){
-                                        echo"
+                                    while ($opt = mysqli_fetch_assoc($res)) {
+                                        echo "
                                         <div class='col-md-3 mb-1'>
                                         <label> 
                                            <input type='checkbox' name='features' value='$opt[id]' class='form-check-input shadow-none'>
@@ -106,17 +105,17 @@
                                         </div>
                                          ";
                                     }
-                                
+
                                     ?>
                                 </div>
                             </div>
                             <div class="col-12 mb-3">
                                 <label class="form-label fw-bold">Facilities</label>
                                 <div class="row">
-                                    <?php 
+                                    <?php
                                     $res = selectAll('facilities');
-                                    while($opt = mysqli_fetch_assoc($res)){
-                                        echo"
+                                    while ($opt = mysqli_fetch_assoc($res)) {
+                                        echo "
                                         <div class='col-md-3 mb-1'>
                                         <label> 
                                             <input type='checkbox' name='facilities' value='$opt[id]' class='form-check-input shadow-none'>
@@ -135,8 +134,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="reset" class="btn text-secondary shadow-none"
-                            data-bs-dismiss="modal">CANCEL</button>
+                        <button type="reset" class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
                         <button type="submit" class="btn custom-bg text-white shadow-none">SUBMIT</button>
                     </div>
                 </div>
@@ -146,8 +144,7 @@
 
     <!-- Edit class modal-->
 
-    <div class="modal fade" id="edit_class" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="edit-class" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <form id="edit_class_form" autocomplete="off">
                 <div class="modal-content">
@@ -183,10 +180,10 @@
                             <div class="col-12 mb-3">
                                 <label class="form-label fw-bold">Features</label>
                                 <div class="row">
-                                    <?php 
+                                    <?php
                                     $res = selectAll('features');
-                                    while($opt = mysqli_fetch_assoc($res)){
-                                        echo"
+                                    while ($opt = mysqli_fetch_assoc($res)) {
+                                        echo "
                                         <div class='col-md-3 mb-1'>
                                         <label> 
                                            <input type='checkbox' name='features' value='$opt[id]' class='form-check-input shadow-none'>
@@ -196,16 +193,16 @@
                                          ";
                                     }
 
-                                   ?>
+                                    ?>
                                 </div>
                             </div>
                             <div class="col-12 mb-3">
                                 <label class="form-label fw-bold">Facilities</label>
                                 <div class="row">
-                                    <?php 
+                                    <?php
                                     $res = selectAll('facilities');
-                                    while($opt = mysqli_fetch_assoc($res)){
-                                        echo"
+                                    while ($opt = mysqli_fetch_assoc($res)) {
+                                        echo "
                                         <div class='col-md-3 mb-1'>
                                         <label> 
                                             <input type='checkbox' name='facilities' value='$opt[id]' class='form-check-input shadow-none'>
@@ -226,8 +223,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="reset" class="btn text-secondary shadow-none"
-                            data-bs-dismiss="modal">CANCEL</button>
+                        <button type="reset" class="btn text-secondary shadow-none" data-bs-dismiss="modal">CANCEL</button>
                         <button type="submit" class="btn custom-bg text-white shadow-none">SUBMIT</button>
                     </div>
                 </div>
@@ -237,22 +233,19 @@
 
     <!-- Manage class images modal -->
 
-    <div class="modal fade" id="class-images" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="class-images" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">class Name</h5>
-                    <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
+                    <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div id="image-alert"></div>
                     <div class="border-bottom border-3 pb-3 mb-3">
                         <form id="add_image_form">
                             <label class="form-label fw-bold">Add Image</label>
-                            <input type="file" name="image" accept=".jpg, .png, .webp, .jpeg"
-                                class="form-control shadow-none mb-3" required>
+                            <input type="file" name="image" accept=".jpg, .png, .webp, .jpeg" class="form-control shadow-none mb-3" required>
                             <button class="btn custom-bg text-white shadow-none">ADD</button>
                             <input type="hidden" name="class_id">
                         </form>
@@ -280,4 +273,5 @@
     <script src="scripts/class.js"></script>
 
 </body>
+
 </html>
