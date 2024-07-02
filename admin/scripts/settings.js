@@ -17,14 +17,11 @@ function get_general() {
 
   xhr.onload = function () {
     general_data = JSON.parse(this.responseText);
-
     title.innerText = general_data.title;
     about.innerText = general_data.about;
-
     title_inp.innerText = general_data.title;
     about_inp.innerText = general_data.about;
-
-    if (general_data.shutdown == 0) {
+    if (general_data.Shutdown == 0) {
       shutdown_toggle.checked = false;
       shutdown_toggle.value = 0;
     } else {
@@ -63,20 +60,19 @@ function upd_general(title_val, about_val) {
 }
 
 function upd_shutdown(val) {
-  console.log("tes");
+  console.log(val);
   let xhr = new XMLHttpRequest();
   xhr.open("POST", "ajax/settings_crud.php", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
   xhr.onload = function () {
-    if (this.responseText == 1 && general_data.shutdown == 0) {
+    if (general_data.Shutdown == 0) {
       alert("success", "Website berhasil dinonaktifkan!");
       get_general();
     } else {
       alert("success", "Website kembali Aktif!");
+      get_general();
     }
   };
-
   xhr.send("upd_shutdown=" + val);
 }
 
